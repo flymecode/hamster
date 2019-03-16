@@ -1,0 +1,10 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: hamster
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://120.79.7.246:3306/xupt_hamster?characterEncoding=utf-8&useSSL=false
