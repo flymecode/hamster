@@ -34,7 +34,7 @@ public class MailUtils {
     @Autowired
     private TemplateEngine templateEngine;
 
-    @Value("${spring.mail.studentId}")
+    @Value("${spring.mail.username}")
     private String sendEmailfrom;
 
     @Value("${spring.mail.nickname}")
