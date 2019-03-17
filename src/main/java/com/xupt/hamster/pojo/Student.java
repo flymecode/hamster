@@ -13,11 +13,17 @@ import java.util.Date;
 public class Student extends TokenDetail {
 
     private Integer id;
-    // 姓名
+    /**
+     * 姓名
+     */
     private String name;
-    // 邮箱
+    /**
+     * 邮箱
+     */
     private String email;
-    // 是否评教
+    /**
+     * 是否评教
+     */
     private Boolean state = false;
 
     private Date updateTime;

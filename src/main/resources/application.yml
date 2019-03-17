@@ -20,3 +20,8 @@ jwtToken:
   secret: xupt
   timeout: 100000
   algorithm: HS512
+
+logging:
+  level:
+    com.xupt.hamster: debug
+  file: web
