@@ -1,10 +1,7 @@
 package com.xupt.hamster.mapper;
 
 import com.xupt.hamster.pojo.Student;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @author maxu
@@ -20,6 +17,6 @@ public interface StudentMapper {
 
     @Insert("insert into dp_student (studentId,password) values(#{studentId},#{password})")
     int insert(Student student);
-
+    @Update("update ")
     int changePassword(Student student);
 }
