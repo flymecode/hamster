@@ -8,7 +8,18 @@ package com.xupt.hamster.pojo;
  */
 public class Question {
 
+    /**
+     * 问题id
+     */
     private Integer questionId;
+    /**
+     * 问题类型
+     */
     private String typeName;
+    /**
+     * 问题内容
+     */
     private String context;
+
+
 }

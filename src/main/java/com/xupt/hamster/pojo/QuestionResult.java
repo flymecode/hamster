@@ -1,11 +1,12 @@
 package com.xupt.hamster.pojo;
 
 /**
- * 问卷
+ * 问卷结果
  * @author maxu
  * @date 2019/3/17
  */
-public class Result {
+public class QuestionResult {
+
 
     /**
      * 问题id
@@ -15,4 +16,8 @@ public class Result {
      * 回答
      */
     private String answer;
+    /**
+     * 问卷id
+     */
+    private Integer questionnaireId;
 }

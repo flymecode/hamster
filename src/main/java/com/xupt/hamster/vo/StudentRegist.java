@@ -29,8 +29,8 @@ import javax.validation.constraints.Pattern;
 @NotNull(message = "user info cannot be null")
 public class StudentRegist {
 
-    @NotBlank(message = "username cannot be empty")
-    private String username;
+    @NotBlank(message = "studentId cannot be empty")
+    private String studentId;
 
     @NotBlank(message = "password cannot be empty")
     @Pattern(regexp = Constants.REG_USER_PASSWORD, message = "密码长度为6-20位")

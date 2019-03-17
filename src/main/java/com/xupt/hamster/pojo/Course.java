@@ -6,7 +6,7 @@ package com.xupt.hamster.pojo;
  */
 public class Course {
     /**
-     * 课程id
+     * 课程号
      */
     private Integer id;
     /**

@@ -2,8 +2,6 @@ package com.xupt.hamster.pojo;
 
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * 问卷
  * @author maxu
@@ -11,8 +9,21 @@ import java.util.List;
  */
 @Data
 public class Questionnaire {
-
+    /**
+     * 问卷id
+     */
+    private Integer id;
+    /**
+     * 学号id
+     */
+    private Integer studentId;
+    /**
+     * 教师id
+     */
     private Integer teacherId;
+    /**
+     * 课程id
+     */
     private Integer courseId;
-    List<Result> results;
+
 }

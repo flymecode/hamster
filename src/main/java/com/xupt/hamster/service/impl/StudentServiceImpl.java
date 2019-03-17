@@ -57,14 +57,14 @@ public class StudentServiceImpl implements StudentService {
         Student student = studentMapper.selectByUserName(studentLogin.getUsername());
         if (null == student) {
             log.info("user not found: {}", studentLogin.getUsername());
-            return resultMap.fail().message("user not found").payload("username or password is wrong");
+            return resultMap.fail().message("user not found").payload("studentId or password is wrong");
         }
         StudentLoginResult studentLoginResult = new StudentLoginResult();
         BeanUtils.copyProperties(student, studentLoginResult);
         //校验密码
         if (!BCrypt.checkpw(studentLogin.getPassword(), student.getPassword())) {
             log.info("password is wrong: {}", studentLogin.getUsername());
-            return resultMap.fail().message("password is wrong").payload("username or password is wrong");
+            return resultMap.fail().message("password is wrong").payload("studentId or password is wrong");
         }
         return resultMap.success(tokenUtils.generateToken(student)).payload(studentLoginResult);
     }
@@ -80,9 +80,9 @@ public class StudentServiceImpl implements StudentService {
     public ResultMap regist(StudentRegist studentRegist) {
         ResultMap resultMap = new ResultMap(tokenUtils);
         //用户名是否已经注册
-        if (isExist(studentRegist.getUsername(), null, null)) {
-            log.info("the username {} has been registered", studentRegist.getUsername());
-            return resultMap.fail().message("the username:" + studentRegist.getUsername() + " has been registered");
+        if (isExist(studentRegist.getStudentId(), null, null)) {
+            log.info("the studentId {} has been registered", studentRegist.getStudentId());
+            return resultMap.fail().message("the studentId:" + studentRegist.getStudentId() + " has been registered");
         }
         Student student = new Student();
         //密码加密

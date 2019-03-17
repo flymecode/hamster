@@ -49,7 +49,7 @@ public class TokenUtils {
      */
     public String generateToken(TokenDetail tokenDetail) {
         Map<String, Object> claims = new HashMap<String, Object>();
-        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getUsername()) ? "" : tokenDetail.getUsername());
+        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getStudentId()) ? "" : tokenDetail.getStudentId());
         claims.put(Constants.TOKEN_USER_PASSWORD, StringUtils.isEmpty(tokenDetail.getPassword()) ? "" : tokenDetail.getPassword());
         claims.put(Constants.TOKEN_CREATE_TIME, System.currentTimeMillis());
         return generate(claims);
@@ -77,7 +77,7 @@ public class TokenUtils {
      */
     public String generateToken(TokenDetail tokenDetail, Long timeOutMillis) {
         Map<String, Object> claims = new HashMap<String, Object>();
-        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getUsername()) ? "" : tokenDetail.getUsername());
+        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getStudentId()) ? "" : tokenDetail.getStudentId());
         claims.put(Constants.TOKEN_USER_PASSWORD, StringUtils.isEmpty(tokenDetail.getPassword()) ? "" : tokenDetail.getPassword());
         claims.put(Constants.TOKEN_CREATE_TIME, System.currentTimeMillis());
 
@@ -113,7 +113,7 @@ public class TokenUtils {
      */
     public String generateContinuousToken(TokenDetail tokenDetail) {
         Map<String, Object> claims = new HashMap<String, Object>();
-        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getUsername()) ? "" : tokenDetail.getUsername());
+        claims.put(Constants.TOKEN_USER_NAME, StringUtils.isEmpty(tokenDetail.getStudentId()) ? "" : tokenDetail.getStudentId());
         claims.put(Constants.TOKEN_USER_PASSWORD, StringUtils.isEmpty(tokenDetail.getPassword()) ? "" : tokenDetail.getPassword());
         claims.put(Constants.TOKEN_CREATE_TIME, System.currentTimeMillis());
         try {
@@ -238,7 +238,7 @@ public class TokenUtils {
         TokenDetail user = (TokenDetail) tokenDetail;
         String username = getUsername(token);
         String password = getPassword(token);
-        return (username.equals(user.getUsername()) && password.equals(user.getPassword()) && !(isExpired(token)));
+        return (username.equals(user.getStudentId()) && password.equals(user.getPassword()) && !(isExpired(token)));
     }
 
     /**

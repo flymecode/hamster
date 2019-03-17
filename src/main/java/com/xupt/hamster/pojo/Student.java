@@ -12,33 +12,25 @@ import java.util.Date;
 @Data
 public class Student extends TokenDetail {
 
-    private Integer id;
-    private Integer majorId;
+
     /**
      * 姓名
      */
     private String name;
     /**
+     * 性别
+     */
+    private String sex;
+    /**
      * 邮箱
      */
     private String email;
-    /**
-     * 班级
-     */
-    private String grade;
-    /**
-     * 学院
-     */
-    private String academy;
-    /**
-     * 专业
-     */
-    private String major;
     /**
      * 是否评教
      */
     private Boolean state = false;
 
+    private Integer majorId;
     private Date updateTime;
     private Date createTime;
 }
