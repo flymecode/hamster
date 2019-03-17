@@ -1,5 +1,6 @@
 package com.xupt.hamster.pojo;
 
+import com.xupt.hamster.core.model.TokenDetail;
 import lombok.Data;
 
 /**
@@ -7,16 +8,13 @@ import lombok.Data;
  * @date 2019/3/16
  */
 @Data
-public class Student {
+public class Student extends TokenDetail {
 
     private Integer id;
-    // 学号
-    private String sno;
-    private String studentName;
+    // 姓名
     private String name;
-    // 班级
-    private String grade;
-    private String password;
-    // 学院
-    private String academy;
+    // 邮箱
+    private String email;
+    // 是否评教
+    private Boolean state = false;
 }

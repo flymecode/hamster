@@ -9,8 +9,8 @@ import javax.validation.constraints.NotBlank;
  * @date 2019/3/16
  */
 @Data
-public class UserLogin {
-    @NotBlank(message = "username cannot be empty")
+public class StudentLogin {
+    @NotBlank(message = "schoolId cannot be empty")
     private String username;
 
     @NotBlank(message = "password cannot be empty")
