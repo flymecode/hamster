@@ -13,5 +13,8 @@ public abstract class TokenDetail {
      * 学号
      */
     public String username;
+    /**
+     * 密码
+     */
     public String password;
 }

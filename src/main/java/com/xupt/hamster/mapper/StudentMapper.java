@@ -20,4 +20,6 @@ public interface StudentMapper {
 
     @Insert("insert into dp_student (username,password) values(#{username},#{password})")
     int insert(Student student);
+
+    int changePassword(Student student);
 }

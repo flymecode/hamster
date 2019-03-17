@@ -64,4 +64,8 @@ public class Constants {
      * 匹配密码
      */
     public static final String REG_USER_PASSWORD = ".{6,20}";
+    /**
+     * 当前用户
+     */
+    public static final String CURRENT_USER = "CURRENT_USER";
 }

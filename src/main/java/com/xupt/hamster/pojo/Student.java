@@ -3,6 +3,8 @@ package com.xupt.hamster.pojo;
 import com.xupt.hamster.core.model.TokenDetail;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @author maxu
  * @date 2019/3/16
@@ -17,4 +19,7 @@ public class Student extends TokenDetail {
     private String email;
     // 是否评教
     private Boolean state = false;
+
+    private Date updateTime;
+    private Date createTime;
 }

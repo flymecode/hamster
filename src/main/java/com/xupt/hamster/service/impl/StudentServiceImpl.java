@@ -1,6 +1,5 @@
 package com.xupt.hamster.service.impl;
 
-import com.xupt.hamster.core.common.Constants;
 import com.xupt.hamster.core.common.ResultMap;
 import com.xupt.hamster.core.utils.MailUtils;
 import com.xupt.hamster.core.utils.TokenUtils;
@@ -16,6 +15,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 /**
  * @author maxu
@@ -93,6 +95,66 @@ public class StudentServiceImpl implements StudentService {
         } else {
             log.info("regist fail: {}", studentRegist.toString());
             return resultMap.fail().message("regist fail: unspecified error");
+        }
+    }
+
+    /**
+     * 根据用户名称获取用户
+     * @param username
+     * @return
+     */
+    @Override
+    public Student getByUserName(String username) {
+        return studentMapper.selectByUserName(username);
+    }
+
+    /**
+     * 更新用户
+     * @param student
+     * @param request
+     * @return
+     */
+    @Override
+    public ResultMap updateUser(Student student, HttpServletRequest request) {
+        return null;
+    }
+
+    /**
+     * 发送邮件
+     * @param email
+     * @param student
+     * @param request
+     * @return
+     */
+    @Override
+    public ResultMap sendMail(String email, Student student, HttpServletRequest request) {
+        return null;
+    }
+
+    /**
+     * 更新用户密码
+     * @param student
+     * @param oldPassword
+     * @param password
+     * @param request
+     * @return
+     */
+    @Override
+    public ResultMap changeUserPassword(Student student, String oldPassword, String password, HttpServletRequest request) {
+        ResultMap resultMap = new ResultMap(tokenUtils);
+
+        //校验原密码
+        if (!BCrypt.checkpw(oldPassword, student.getPassword())) {
+            return resultMap.failAndRefreshToken(request).message("Incorrect original password");
+        }
+        //设置新密码
+        student.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
+        student.setUpdateTime(new Date());
+        int i = studentMapper.changePassword(student);
+        if (i > 0) {
+            return resultMap.success().message("Successful password modification");
+        } else {
+            return resultMap.failAndRefreshToken(request);
         }
     }
 

@@ -7,13 +7,19 @@ import lombok.Data;
  * @date 2019/3/17
  */
 @Data
-public class Marjor {
+public class Major {
 
     private Integer id;
-    // 班级
+    /**
+     * 班级
+     */
     private String grade;
-    // 学院
+    /**
+     * 学院
+     */
     private String academy;
-    // 专业
+    /**
+     * 专业
+     */
     private String major;
 }
