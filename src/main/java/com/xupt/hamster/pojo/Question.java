@@ -1,17 +1,14 @@
 package com.xupt.hamster.pojo;
 
 /**
- * 问卷
- * @author maxu
- * @date 2019/3/17
+ * describe:问题
+ *
+ * @author Gary
+ * @date 2019/03/17
  */
 public class Question {
-    /**
-     * 问题类型
-     */
-    private Integer typeId;
-    /**
-     * 回答
-     */
-    private String answer;
+
+    private Integer questionId;
+    private String typeName;
+    private String context;
 }

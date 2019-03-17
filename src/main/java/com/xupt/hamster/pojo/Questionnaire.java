@@ -14,5 +14,5 @@ public class Questionnaire {
 
     private Integer teacherId;
     private Integer courseId;
-    List<Question> question;
+    List<Result> results;
 }
