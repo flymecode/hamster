@@ -8,5 +8,4 @@ public class RelTeacherCourse {
 
     private Integer teacherId;
     private Integer courseId;
-    private Integer majorId;
 }

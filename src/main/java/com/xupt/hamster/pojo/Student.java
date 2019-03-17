@@ -13,6 +13,7 @@ import java.util.Date;
 public class Student extends TokenDetail {
 
     private Integer id;
+    private Integer majorId;
     /**
      * 姓名
      */
@@ -21,6 +22,18 @@ public class Student extends TokenDetail {
      * 邮箱
      */
     private String email;
+    /**
+     * 班级
+     */
+    private String grade;
+    /**
+     * 学院
+     */
+    private String academy;
+    /**
+     * 专业
+     */
+    private String major;
     /**
      * 是否评教
      */
