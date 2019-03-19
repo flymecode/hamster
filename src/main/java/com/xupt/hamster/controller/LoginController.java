@@ -28,7 +28,6 @@ import javax.validation.Valid;
 public class LoginController {
     @Autowired
     private StudentService studentService;
-
     @PostMapping("/login")
     @ApiOperation(value = "Login into the server and return token")
     public ResponseEntity login(@Valid @RequestBody StudentLogin studentLogin, @ApiIgnore BindingResult bindingResult) {

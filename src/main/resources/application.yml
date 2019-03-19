@@ -8,6 +8,20 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://120.79.7.246:3306/xupt_hamster?characterEncoding=utf-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT1FROMDUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,logback
+    logSlowSql: true
+
 
   mail:
     host: smtp.163.com
@@ -15,7 +29,6 @@ spring:
     username: 123
     nickname: xupt
     port: 25
-
 jwtToken:
   secret: xupt
   timeout: 100000
@@ -25,3 +38,8 @@ logging:
   level:
     com.xupt.hamster: debug
   file: web
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+

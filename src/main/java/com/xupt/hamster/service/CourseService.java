@@ -1,6 +1,6 @@
 package com.xupt.hamster.service;
 
-import com.xupt.hamster.pojo.Course;
+import com.xupt.hamster.core.common.ResultMap;
 
 /**
  * @author maxu
@@ -12,5 +12,5 @@ public interface CourseService {
      * @param sid
      * @return
      */
-    Course getAllCourse(Integer sid);
+    ResultMap getAllCourse(String sid);
 }

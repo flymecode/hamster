@@ -4,6 +4,7 @@ import com.xupt.hamster.core.common.ResultMap;
 import com.xupt.hamster.mapper.QuestionMapper;
 import com.xupt.hamster.pojo.Question;
 import com.xupt.hamster.service.QuestionService;
+import com.xupt.hamster.vo.QuestionResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,13 +27,14 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public ResultMap getAllQuestion() {
-        //List<Question> list = questionMapper.getAllQuestion();
-        List<Question> list = new ArrayList<>();
-        Question question = new Question();
-        question.setTypeName("test");
-        list.add(question);
+        List<Question> list = questionMapper.getAllQuestion();
         ResultMap resultMap = new ResultMap();
         resultMap.payloads(list);
         return resultMap;
+    }
+
+    @Override
+    public ResultMap saveQuestionResult(QuestionResult questionResult) {
+        return null;
     }
 }

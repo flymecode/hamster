@@ -12,10 +12,10 @@ import java.util.List;
 @Mapper
 public interface QuestionMapper {
 
-    @Select("select * from question")
+    @Select("select * from dp_question")
     List<Question> getAllQuestion();
 
-    @Select("select * from question where questionId = #{questionId}")
+    @Select("select * from dp_question where questionId = #{questionId}")
     Question getQuestionById(@Param("questionId") String id);
 
 }

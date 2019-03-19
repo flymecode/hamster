@@ -14,7 +14,7 @@ public class Question {
     /**
      * 问题id
      */
-    private Integer questionId;
+    private Integer id;
     /**
      * 问题类型
      */

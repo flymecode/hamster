@@ -13,11 +13,20 @@ public class QuestionResult {
      */
     private Integer questionId;
     /**
+     * 学号id
+     */
+    private Integer studentId;
+    /**
+     * 教师id
+     */
+    private Integer teacherId;
+    /**
+     * 课程id
+     */
+    private Integer courseId;
+    /**
      * 回答
      */
     private String answer;
-    /**
-     * 问卷id
-     */
-    private Integer questionnaireId;
+
 }

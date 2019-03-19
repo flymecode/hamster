@@ -30,6 +30,9 @@ public class Student extends TokenDetail {
      */
     private Boolean state = false;
 
+    /**
+     * 专业
+     */
     private Integer majorId;
     private Date updateTime;
     private Date createTime;
