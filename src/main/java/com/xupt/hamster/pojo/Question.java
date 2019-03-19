@@ -1,11 +1,14 @@
 package com.xupt.hamster.pojo;
 
+import lombok.Data;
+
 /**
  * describe:问题
  *
  * @author Gary
  * @date 2019/03/17
  */
+@Data
 public class Question {
 
     /**

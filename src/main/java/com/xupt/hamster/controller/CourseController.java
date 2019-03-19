@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(Constants.BASE_API_PATH + "course")
 public class CourseController {
 
-    @Autowired
-    private CourseService courseService;
+//    @Autowired
+//    private CourseService courseService;
 
     @GetMapping("/{sid}")
     public ResponseEntity getAllCourse(@PathVariable("sid") Integer sid) {
