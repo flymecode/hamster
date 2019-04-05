@@ -3,6 +3,8 @@ package com.xupt.hamster.service;
 import com.xupt.hamster.core.common.ResultMap;
 import com.xupt.hamster.vo.QuestionResult;
 
+import java.util.List;
+
 /**
  * describe:问题接口
  *
@@ -15,5 +17,5 @@ public interface QuestionService {
      */
     ResultMap getAllQuestion();
 
-    ResultMap saveQuestionResult(QuestionResult questionResult);
+    ResultMap saveQuestionResult(List<QuestionResult> questionResults);
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author Gary
@@ -35,12 +36,12 @@ public class QuestionController {
 
     @ApiOperation("insert into question")
     @PostMapping
-    public ResponseEntity saveQuestion(@Valid @RequestBody QuestionResult questionResult, @ApiIgnore BindingResult bindingResult) {
+    public ResponseEntity saveQuestion(@Valid @RequestBody List<QuestionResult> questionResults, @ApiIgnore BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             ResultMap resultMap = new ResultMap().fail().message(bindingResult.getFieldErrors().get(0).getDefaultMessage());
             return ResponseEntity.status(resultMap.getCode()).body(resultMap);
         }
-        ResultMap resultMap = questionService.saveQuestionResult(questionResult);
+        ResultMap resultMap = questionService.saveQuestionResult(questionResults);
         return ResponseEntity.status(resultMap.getCode()).body(resultMap);
     }
 

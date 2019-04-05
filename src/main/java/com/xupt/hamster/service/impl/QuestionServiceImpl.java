@@ -34,7 +34,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public ResultMap saveQuestionResult(QuestionResult questionResult) {
+    public ResultMap saveQuestionResult(List<QuestionResult> questionResults) {
         return null;
     }
 }

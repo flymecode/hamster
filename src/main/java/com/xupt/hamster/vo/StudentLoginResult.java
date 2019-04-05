@@ -8,7 +8,10 @@ import lombok.Data;
  */
 @Data
 public class StudentLoginResult {
-    private Integer id;
+    /**
+     * 学号
+     */
+    private String studentId;
     // 姓名
     private String name;
     // 班级
@@ -20,5 +23,5 @@ public class StudentLoginResult {
     // 邮箱
     private String email;
     // 是否评教
-    private Boolean sure = false;
+    private Boolean state = false;
 }
